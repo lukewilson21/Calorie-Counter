@@ -233,7 +233,7 @@
       </div>
 
       <div class="upload-area" id="uploadArea">
-        <input type="file" accept="image/*" capture="environment" id="fileInput" onchange="handleFile(event)" />
+        <input type="file" accept="image/*" id="fileInput" onchange="handleFile(event)" />
         <div class="upload-icon">📷</div>
         <div class="upload-label">Tap to take or upload a photo</div>
         <div class="upload-sub">Nutritional label or ingredient panel</div>
@@ -591,7 +591,7 @@ Label shows values per ${servingSize}g/ml. If unclear set confidence low and est
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'x-api-key': apiKey, 'anthropic-version': '2023-06-01', 'anthropic-dangerous-direct-browser-access': 'true' },
       body: JSON.stringify({
-        model: 'claude-sonnet-4-20250514', max_tokens: 500,
+        model: 'claude-sonnet-4-5', max_tokens: 500,
         messages: [{ role: 'user', content: [
           { type: 'image', source: { type: 'base64', media_type: mime, data: base64 } },
           { type: 'text', text: prompt }
